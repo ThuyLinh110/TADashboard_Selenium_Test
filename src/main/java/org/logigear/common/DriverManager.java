@@ -6,11 +6,11 @@ public class DriverManager {
     public static void openBrowser(String browserType){
         switch (browserType) {
             case "firefox":
-                System.setProperty("webdriver.gecko.driver", Utilities.getPathProject() + "\\Executables\\geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver",Constant.FIREFOX_DRIVER_PATH);
                 Constant.WEBDRIVER = new FirefoxDriver();
                 break;
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", Utilities.getPathProject() + "\\Executables\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", Constant.CHROME_DRIVER_PATH);
                 Constant.WEBDRIVER = new ChromeDriver();
                 break;
             default:
