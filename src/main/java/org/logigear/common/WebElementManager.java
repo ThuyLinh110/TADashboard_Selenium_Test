@@ -27,7 +27,7 @@ public class WebElementManager {
         return Constant.WEBDRIVER.switchTo().alert();
     }
 
-    public static void HoverToElement(WebElement element){
+    public static void hoverToElement(WebElement element){
         Actions action = new Actions(Constant.WEBDRIVER);
         action.moveToElement(element).perform();
     }

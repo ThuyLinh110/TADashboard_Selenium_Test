@@ -8,6 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class GeneralPage {
     String ddpNav = "//a[contains(@href, '$s')]";
+    private By  ddpGlobalSetting = By.className("mn-setting");
     String btnOption = "//a[contains(text(), '%s')]";
 
     WebElement getddpNav(String nameDropdown){
@@ -16,14 +17,19 @@ public class GeneralPage {
     WebElement getBtnOption(String nameOption){
         return Constant.WEBDRIVER.findElement(By.xpath(String.format(btnOption, nameOption)));
     }
+    WebElement getddpGlobalSetting(){
+        return Constant.WEBDRIVER.findElement(ddpGlobalSetting);
+    }
 
     public void clickOption(String nameOption){
         WebElementManager.clickToElement(getBtnOption(nameOption));
     }
 
-    public void hoverDropdown(String nameDropdown){
-        Actions action = new Actions(Constant.WEBDRIVER);
-        action.moveToElement(getddpNav(nameDropdown)).perform();
+    public void hoverDdpNav(String nameDropdown){
+        WebElementManager.hoverToElement(getddpNav(nameDropdown));
+    }
+    public void hoverDdpGlobalSetting(){
+        WebElementManager.hoverToElement(getddpGlobalSetting());
     }
 
 }
