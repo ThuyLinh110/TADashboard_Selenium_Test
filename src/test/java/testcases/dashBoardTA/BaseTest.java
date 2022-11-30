@@ -21,9 +21,9 @@ public class BaseTest {
         DOMConfigurator.configure(Constant.LOG4J_PATH);
 
     }
-    @AfterMethod
-    public void afterMethod() {
-        Log.info("Post-condition");
-        Constant.WEBDRIVER.quit();
-    }
+//    @AfterMethod
+//    public void afterMethod() {
+//        Log.info("Post-condition");
+//        Constant.WEBDRIVER.quit();
+//    }
 }

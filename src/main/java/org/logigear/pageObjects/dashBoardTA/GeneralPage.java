@@ -4,20 +4,19 @@ import org.logigear.common.WebElementManager;
 import org.logigear.constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 public class GeneralPage {
     String ddpNav = "//a[contains(@href, '%s')]";
-    private By  ddpGlobalSetting = By.className("mn-setting");
+    private By ddpGlobalSetting =  By.xpath("//li[contains(@class,'mn-setting')]");
     String btnOption = "//a[contains(text(), '%s')]";
 
-    WebElement getddpNav(String nameDropdown){
+    WebElement getDdpNav(String nameDropdown){
         return Constant.WEBDRIVER.findElement(By.xpath(String.format(ddpNav, nameDropdown)));
     }
     WebElement getBtnOption(String nameOption){
         return Constant.WEBDRIVER.findElement(By.xpath(String.format(btnOption, nameOption)));
     }
-    WebElement getddpGlobalSetting(){
+    WebElement getDdpGlobalSetting(){
         return Constant.WEBDRIVER.findElement(ddpGlobalSetting);
     }
 
@@ -26,10 +25,10 @@ public class GeneralPage {
     }
 
     public void hoverDdpNav(String nameDropdown){
-        WebElementManager.hoverToElement(getddpNav(nameDropdown));
+        WebElementManager.hoverToElement(getDdpNav(nameDropdown));
     }
     public void hoverDdpGlobalSetting(){
-        WebElementManager.hoverToElement(getddpGlobalSetting());
+        WebElementManager.hoverToElement(getDdpGlobalSetting());
     }
 
 }

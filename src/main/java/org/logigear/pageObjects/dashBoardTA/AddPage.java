@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class AddPage extends MainPage {
+public class AddPage extends GeneralPage {
 
     private By ddlAddPage = By.xpath("//a[contains(text(),'Add Page')]");
     private By txtPageName = By.xpath("//td//input[@id='name']");
@@ -14,6 +14,7 @@ public class AddPage extends MainPage {
     private By ddlDisplayAfter = By.xpath("//td//select[@id='afterpage']");
     private By chkPublic = By.xpath("//td//input[@id='ispublic']");
     private String btnInForm = "//td//input[@id='%s']";
+    private By btnScrollToTop = By.id("toTop");
     
     private WebElement getDdlAddPage() {
         return Constant.WEBDRIVER.findElement(ddlAddPage);
@@ -41,12 +42,14 @@ public class AddPage extends MainPage {
     WebElement getBtnOptionInForm(String btnOption){
         return Constant.WEBDRIVER.findElement(By.xpath(String.format(btnInForm, btnOption)));
     }
+    public WebElement getBtnScrollToTop(){return Constant.WEBDRIVER.findElement(btnScrollToTop);}
+
     public void fillDataAddPage(String pageName, String parentPage, String numberOfColum, String displayAfter) {
         Select sltParentPage = new Select(getDdlParentPage());
         Select sltNumberOfColum = new Select(getDdlNumberOfColum());
         Select sltDisplayAfter = new Select(getDdlDisplayAfter());
         getTxtPageName().sendKeys(pageName);
-        sltParentPage.deselectByVisibleText(parentPage);
+        sltParentPage.selectByVisibleText(parentPage);
         sltNumberOfColum.selectByVisibleText(numberOfColum);
         sltDisplayAfter.selectByVisibleText(displayAfter);
     }
@@ -57,6 +60,12 @@ public class AddPage extends MainPage {
             getChkPublic().click();
         }
     }
+
+    public void checkAddPageIsDisplay(){
+        Boolean checkAddPageDisplay = getDdlAddPage().isDisplayed();
+
+    }
+
 
     public void clickBtnInForm(String btnOption) {
         getBtnOptionInForm(btnOption).click();

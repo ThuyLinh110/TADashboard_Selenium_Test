@@ -15,3 +15,4 @@ public class Constant {
     public static final String FIREFOX_DRIVER_PATH = Utilities.getPathProject()+"/src/main/java/org/logigear/excutables/geckodriver.exe";
 
 }
+

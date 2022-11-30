@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class LoginTest extends BaseTest{
 
     @Test
-    public void TC01() throws InterruptedException {
+    public void TC01() {
 //      Load data
         JSONArray existedAccountList = JsonUtils.getJSONList(Constant.EXISTED_ACC_DATA_PATH);
         JSONObject account = JsonUtils.getJSONObjectByIndex(existedAccountList,0);

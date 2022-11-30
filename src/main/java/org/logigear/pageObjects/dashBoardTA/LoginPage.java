@@ -5,7 +5,7 @@ import org.logigear.constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage {
+public class LoginPage extends GeneralPage {
     private By txtUserName = By.id("username");
     private By txtPassword = By.id("password");
     private By btnLogin = By.className("btn-login");
