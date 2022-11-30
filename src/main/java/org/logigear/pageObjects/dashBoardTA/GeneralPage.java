@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class GeneralPage {
-    String ddpNav = "//a[contains(@href, '$s')]";
+    String ddpNav = "//a[contains(@href, '%s')]";
     private By  ddpGlobalSetting = By.className("mn-setting");
     String btnOption = "//a[contains(text(), '%s')]";
 
