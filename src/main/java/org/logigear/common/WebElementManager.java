@@ -3,7 +3,9 @@ package org.logigear.common;
 import org.logigear.constant.Constant;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.concurrent.TimeUnit;
 
