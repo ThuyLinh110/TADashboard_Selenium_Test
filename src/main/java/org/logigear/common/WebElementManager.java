@@ -4,6 +4,7 @@ import org.logigear.constant.Constant;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.concurrent.TimeUnit;
 
@@ -26,5 +27,9 @@ public class WebElementManager {
         return Constant.WEBDRIVER.switchTo().alert();
     }
 
+    public static void HoverToElement(WebElement element){
+        Actions action = new Actions(Constant.WEBDRIVER);
+        action.moveToElement(element).perform();
+    }
 
 }
