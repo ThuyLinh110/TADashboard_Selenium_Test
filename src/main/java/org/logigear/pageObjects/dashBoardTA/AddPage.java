@@ -1,5 +1,6 @@
 package org.logigear.pageObjects.dashBoardTA;
 
+import org.logigear.common.WebElementManager;
 import org.logigear.constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -8,11 +9,9 @@ import org.openqa.selenium.support.ui.Select;
 public class AddPage extends GeneralPage {
 
     private By ddlAddPage = By.xpath("//a[contains(text(),'Add Page')]");
-    private By txtPageName = By.xpath("//td//input[@id='name']");
-    private By ddlParentPage = By.xpath("//td//select[@id='parent']");
-    private By ddlNumberOfColum = By.xpath("//td//select[@id='columnnumber']");
-    private By ddlDisplayAfter = By.xpath("//td//select[@id='afterpage']");
-    private By chkPublic = By.xpath("//td//input[@id='ispublic']");
+    private By txtPageName = By.xpath("//td/input[@id='name']");
+    private  String ddlData ="//td[contains(text(),'%s')]/..//select";
+    private By chkPublic = By.xpath("//td/input[@id='ispublic']");
     private String btnInForm = "//td//input[@id='%s']";
     private By btnScrollToTop = By.id("toTop");
     
@@ -24,16 +23,8 @@ public class AddPage extends GeneralPage {
         return Constant.WEBDRIVER.findElement(txtPageName);
     }
 
-    private WebElement getDdlParentPage() {
-        return Constant.WEBDRIVER.findElement(ddlParentPage);
-    }
-
-    private WebElement getDdlNumberOfColum() {
-        return Constant.WEBDRIVER.findElement(ddlNumberOfColum);
-    }
-
-    private WebElement getDdlDisplayAfter() {
-        return Constant.WEBDRIVER.findElement(ddlDisplayAfter);
+    private WebElement getDdlData(String ddlName) {
+        return Constant.WEBDRIVER.findElement(By.xpath(String.format(ddlData,ddlName)));
     }
 
     private WebElement getChkPublic() {
@@ -45,10 +36,11 @@ public class AddPage extends GeneralPage {
     public WebElement getBtnScrollToTop(){return Constant.WEBDRIVER.findElement(btnScrollToTop);}
 
     public void fillDataAddPage(String pageName, String parentPage, String numberOfColum, String displayAfter) {
-        Select sltParentPage = new Select(getDdlParentPage());
-        Select sltNumberOfColum = new Select(getDdlNumberOfColum());
-        Select sltDisplayAfter = new Select(getDdlDisplayAfter());
+        Select sltParentPage = new Select(getDdlData("Parent Page"));
+        Select sltNumberOfColum = new Select(getDdlData("Number of Columns"));
+        Select sltDisplayAfter = new Select(getDdlData("Display After"));
         getTxtPageName().sendKeys(pageName);
+        WebElementManager.waitToDisplayElement();
         sltParentPage.selectByVisibleText(parentPage);
         sltNumberOfColum.selectByVisibleText(numberOfColum);
         sltDisplayAfter.selectByVisibleText(displayAfter);

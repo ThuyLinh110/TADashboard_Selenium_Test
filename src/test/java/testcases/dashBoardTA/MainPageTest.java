@@ -45,24 +45,36 @@ public class MainPageTest extends BaseTest{
     @Test
     public void TC21(){
         Log.info("Verify that user is able to edit the name of the page (Parent/Sibbling) successfully");
-        Log.info("Step: Navigate to Dashboard login page");
-        Log.info("Step: Login with valid account");
+        Log.info("Step1: Navigate to Dashboard login page");
+        Log.info("Step2: Login with valid account");
         loginPage.login(validUserName, validPassword);
         WebElementManager.waitToDisplayElement();
-        Log.info("Step: Go to Global Setting -> Add page");
+        Log.info("Step3: Go to Global Setting -> Add page");
         mainPage.hoverDdpGlobalSetting();
         mainPage.clickOption("Add Page");
-        Log.info("Step: Enter info into all required fields on New Page dialog");
-        addPage.fillDataAddPage("Page 1","Overview","2","Overview");
+        Log.info("Step4: Enter info into all required fields on New Page dialog");
+        addPage.fillDataAddPage("Page 1","Overview","3","Overview");
         addPage.checkPublic();
         addPage.clickBtnInForm("OK");
-        Log.info("Step: Go to Global Setting -> Add page");
+        Log.info("Step5: Go to Global Setting -> Add page");
         WebElementManager.waitToDisplayElement();
         mainPage.hoverDdpGlobalSetting();
         mainPage.clickOption("Add Page");
+        Log.info("Step6: Enter info into all required fields on New Page dialog");
         addPage.fillDataAddPage("Page 2","Page 1","2","Overview");
-        Log.info(" Go to the first created page");
+        Log.info("Step7: Go to the first created page");
         mainPage.hoverDdpNav("/TADashboard/coooav44rqyi.page");
+        Log.info("Step8: Click Edit link ");
+        Log.info("Step9: Step Enter another name into Page Name field Page name: Page 3");
+
+        //Log.info("Step10: Step Click Ok button on Edit Page dialog");
+        //Log.info("Step11: VP Observe the current page User is able to edit the name of") ;
+        //parent page successfully
+        //Log.info("Step12: Step Go to the second created page Page 2");
+        //Log.info("Step13: Step Click Edit link");
+        //Log.info("Step14: Step Enter another name into Page Name field Page name: Page 4");
+        //Log.info("Step15: Click Ok button on Edit Page dialog");
+        //Log.info("Step16: VP Observe the current page");
 
     }
 
