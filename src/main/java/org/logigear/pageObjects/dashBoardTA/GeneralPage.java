@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class GeneralPage {
     String ddpNav = "//a[contains(@href, '%s')]";
-    private By  ddpGlobalSetting = By.className("mn-setting");
+    private By ddpGlobalSetting = By.xpath("//li[contains(@class,'mn-setting')]");
     String btnOption = "//a[contains(text(), '%s')]";
 
     WebElement getddpNav(String nameDropdown){
