@@ -24,6 +24,9 @@ public class WebElementManager {
         Constant.WEBDRIVER.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
+    public static void sleep() throws InterruptedException {
+        Thread.sleep(3000);
+    }
     public static Alert getAlert(){
         return Constant.WEBDRIVER.switchTo().alert();
     }

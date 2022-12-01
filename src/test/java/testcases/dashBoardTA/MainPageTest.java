@@ -43,7 +43,7 @@ public class MainPageTest extends BaseTest{
     }
 
     @Test
-    public void TC21(){
+    public void TC21() throws InterruptedException {
         Log.info("Verify that user is able to edit the name of the page (Parent/Sibbling) successfully");
         Log.info("Step1: Navigate to Dashboard login page");
         Log.info("Step2: Login with valid account");
@@ -53,15 +53,16 @@ public class MainPageTest extends BaseTest{
         mainPage.hoverDdpGlobalSetting();
         mainPage.clickOption("Add Page");
         Log.info("Step4: Enter info into all required fields on New Page dialog");
-        addPage.fillDataAddPage("Page 1","Overview","3","Overview");
-        addPage.checkPublic();
+        addPage.fillDataWithTwoFields("Page 1","Overview");
         addPage.clickBtnInForm("OK");
         Log.info("Step5: Go to Global Setting -> Add page");
-        WebElementManager.waitToDisplayElement();
+        WebElementManager.sleep();
         mainPage.hoverDdpGlobalSetting();
         mainPage.clickOption("Add Page");
         Log.info("Step6: Enter info into all required fields on New Page dialog");
-        addPage.fillDataAddPage("Page 2","Page 1","2","Overview");
+        addPage.fillDataWithTwoFields("Page 2","Page 1");
+        WebElementManager.sleep();
+        addPage.clickBtnInForm("OK");
         Log.info("Step7: Go to the first created page");
         mainPage.hoverDdpNav("/TADashboard/coooav44rqyi.page");
         Log.info("Step8: Click Edit link ");

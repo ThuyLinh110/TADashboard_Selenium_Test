@@ -35,15 +35,21 @@ public class AddPage extends GeneralPage {
     }
     public WebElement getBtnScrollToTop(){return Constant.WEBDRIVER.findElement(btnScrollToTop);}
 
-    public void fillDataAddPage(String pageName, String parentPage, String numberOfColum, String displayAfter) {
+    public void fillDataAddPage(String pageName, String parentPage, String numberOfColum, String displayAfter) throws InterruptedException {
+        WebElementManager.sleep();
         Select sltParentPage = new Select(getDdlData("Parent Page"));
         Select sltNumberOfColum = new Select(getDdlData("Number of Columns"));
         Select sltDisplayAfter = new Select(getDdlData("Display After"));
         getTxtPageName().sendKeys(pageName);
-        WebElementManager.waitToDisplayElement();
         sltParentPage.selectByVisibleText(parentPage);
+        WebElementManager.sleep();
         sltNumberOfColum.selectByVisibleText(numberOfColum);
         sltDisplayAfter.selectByVisibleText(displayAfter);
+    }
+    public void fillDataWithTwoFields(String pageName, String parentPage){
+        Select sltParentPage = new Select(getDdlData("Parent Page"));
+        getTxtPageName().sendKeys(pageName);
+        sltParentPage.selectByVisibleText(parentPage);
     }
 
     public void checkPublic() {
