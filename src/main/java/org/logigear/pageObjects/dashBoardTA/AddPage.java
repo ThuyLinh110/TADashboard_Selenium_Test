@@ -64,7 +64,6 @@ public class AddPage extends GeneralPage {
 
     }
 
-
     public void clickBtnInForm(String btnOption) {
         getBtnOptionInForm(btnOption).click();
     }
