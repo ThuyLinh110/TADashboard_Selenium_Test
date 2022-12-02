@@ -46,10 +46,11 @@ public class AddPage extends GeneralPage {
         sltNumberOfColum.selectByVisibleText(numberOfColum);
         sltDisplayAfter.selectByVisibleText(displayAfter);
     }
-    public void fillDataWithTwoFields(String pageName, String parentPage){
+    public void fillDataWithTwoFields(String pageName, String parentPage) throws InterruptedException {
         Select sltParentPage = new Select(getDdlData("Parent Page"));
         getTxtPageName().sendKeys(pageName);
         sltParentPage.selectByVisibleText(parentPage);
+        WebElementManager.sleep();
     }
 
     public void checkPublic() {

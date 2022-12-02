@@ -42,7 +42,6 @@ public class MainPageTest extends BaseTest{
         Log.info("Step1: Navigate to Dashboard login page");
         Log.info("Step2: Login with valid account");
         loginPage.login(validUserName, validPassword);
-        WebElementManager.waitToDisplayElement();
         Log.info("Step3: Go to Global Setting -> Add page");
         mainPage.hoverDdpGlobalSetting();
         mainPage.clickOption("Add Page");
@@ -50,12 +49,10 @@ public class MainPageTest extends BaseTest{
         addPage.fillDataWithTwoFields("Page 1","Overview");
         addPage.clickBtnInForm("OK");
         Log.info("Step5: Go to Global Setting -> Add page");
-        WebElementManager.sleep();
         mainPage.hoverDdpGlobalSetting();
         mainPage.clickOption("Add Page");
         Log.info("Step6: Enter info into all required fields on New Page dialog");
         addPage.fillDataWithTwoFields("Page 2","Page 1");
-        WebElementManager.sleep();
         addPage.clickBtnInForm("OK");
         Log.info("Step7: Go to the first created page");
         mainPage.hoverDdpNav("/TADashboard/coooav44rqyi.page");
@@ -64,7 +61,6 @@ public class MainPageTest extends BaseTest{
         mainPage.clickOption("Edit");
         Log.info("Step9: Step Enter another name into Page Name field Page name: Page 3");
         addPage.fillDataWithTwoFields("Page 3","Page 1");
-        WebElementManager.sleep();
         addPage.clickBtnInForm("OK");
         Log.info("User is able to edit the name of parent page successfully");
 
