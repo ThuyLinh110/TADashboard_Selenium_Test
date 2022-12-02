@@ -6,7 +6,6 @@ import org.logigear.common.JsonUtils;
 import org.logigear.common.Log;
 import org.logigear.common.WebElementManager;
 import org.logigear.constant.Constant;
-import org.logigear.pageObjects.dashBoardTA.HomePage;
 import org.logigear.pageObjects.dashBoardTA.LoginPage;
 import org.logigear.pageObjects.dashBoardTA.PanelsPage;
 import org.testng.Assert;
