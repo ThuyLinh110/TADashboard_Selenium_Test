@@ -16,7 +16,6 @@ public class DriverManager {
             default:
                 break;
         }
-
     }
 
     public static void maximizePage(){

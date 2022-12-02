@@ -3,6 +3,7 @@ package org.logigear.common;
 import org.logigear.constant.Constant;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
@@ -23,6 +24,9 @@ public class WebElementManager {
         Constant.WEBDRIVER.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
+    public static void sleep() throws InterruptedException {
+        Thread.sleep(3000);
+    }
     public static Alert getAlert(){
         return Constant.WEBDRIVER.switchTo().alert();
     }
