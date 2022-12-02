@@ -6,18 +6,18 @@
 
         <classes>
 
-            <class name="testcases.dashBoardTA.LoginTest"></class>
-            <class name="testcases.dashBoardTA.MainPageTest">
-                <methods>
-                    <include name="TC11"/>
-                </methods>
-                <methods>
-                    <include name="TC16"/>
-                </methods>
-                <methods>
-                    <include name="TC21"/>
-                </methods>
-            </class>
+<!--            <class name="testcases.dashBoardTA.LoginTest"></class>-->
+<!--            <class name="testcases.dashBoardTA.MainPageTest">-->
+<!--                <methods>-->
+<!--                    <include name="TC11"/>-->
+<!--                </methods>-->
+<!--                <methods>-->
+<!--                    <include name="TC16"/>-->
+<!--                </methods>-->
+<!--                <methods>-->
+<!--                    <include name="TC21"/>-->
+<!--                </methods>-->
+<!--            </class>-->
             <class name="testcases.dashBoardTA.PanelTest"></class>
         </classes>
     </test>
